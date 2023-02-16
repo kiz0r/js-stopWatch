@@ -4,7 +4,7 @@ const timeEl = document.querySelector('.time');
 const [startBtn, resetBtn, stopBtn] = document.querySelectorAll('.btn');
 
 let time = new Date(0);
-const DELAY = 100;
+const DELAY = 10;
 
 let timerId = null;
 
@@ -41,5 +41,5 @@ function formatMinutesAndSeconds(t) {
 }
 
 function formatMiliseconds(ms) {
-  return ms < 100 ? '000' : `${ms}`;
+  return ms < 100 ? (ms < 10 ? `00${ms}` : `0${ms}`) : ms;
 }
